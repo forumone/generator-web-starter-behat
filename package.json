@@ -1,0 +1,44 @@
+{
+  "name": "generator-web-starter-behat",
+  "version": "0.1.0",
+  "description": "A Behat sub-generator for web-starter",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "homepage": "https://github.com/forumone/generator-web-starter-behat",
+  "bugs": "https://github.com/forumone/generator-web-starter/issues",
+  "author": {
+    "name": "Forum One",
+    "email": "support@forumone.com",
+    "url": "https://github.com/forumone"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/forumone/generator-web-starter-behat.git"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "lodash": "^4.11",
+    "update-notifier": "^0.7.0",
+    "yeoman-generator": "~0.23",
+    "yeoman-generator-bluebird": "^0.1.0",
+    "yosay": "~1.1.1",
+    "glob": "^7.0.5"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "GPL"
+    }
+  ],
+  "files": [
+    "web-starter"
+  ],
+  "webStarter": {
+    "category": "VM",
+    "name": "Behat"
+  }
+}

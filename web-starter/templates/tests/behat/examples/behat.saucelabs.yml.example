@@ -1,0 +1,86 @@
+sauce-dev:
+    formatters:
+        pretty: true
+    suites:
+        default:
+          contexts:
+            - FeatureContext
+            - F1ContentUtilityContext
+            - F1FundamentalContext
+            - F1DrushUtilityContext
+            - F1OGContext
+            - Drupal\DrupalExtension\Context\DrupalContext
+            - Drupal\DrupalExtension\Context\MinkContext
+            - Drupal\DrupalExtension\Context\MessageContext
+            - Drupal\DrupalExtension\Context\DrushContext
+            - Behat\MinkExtension\Context\RawMinkContext
+            - Behat\MinkExtension\Context\RawMinkContext
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url: http://forumone:f1dev@dev.{{ host }}.byf1.io/
+            goutte: ~
+            selenium2:
+              browser: chrome
+              wd_host: {{ user }}:{{ access_key }}@ondemand.saucelabs.com/wd/hub
+              capabilities: { platform:OS X 10.10, version: 47}
+            files_path: 'tests/behat/files/'
+        Drupal\DrupalExtension:
+            blackbox: ~
+            text:
+                log_out: "Log out"
+                log_in: "Log in"
+                password_field: "Password"
+                username_field: "Username"
+            selectors:
+                logged_in_selector: "body.logged-in"
+                login_form_selector: "form#user-login"
+            api_driver: 'drupal'
+            drush:
+#              binary: '/usr/local/bin/drush'
+              alias: '{{ alias }}'
+#              global_options: '--alias-path="."'
+            drupal:
+              drupal_root: '/vagrant/public'
+sauce-stage:
+    formatters:
+        pretty: true
+    suites:
+        default:
+          contexts:
+            - FeatureContext
+            - F1ContentUtilityContext
+            - F1FundamentalContext
+            - F1DrushUtilityContext
+            - F1OGContext
+            - Drupal\DrupalExtension\Context\DrupalContext
+            - Drupal\DrupalExtension\Context\MinkContext
+            - Drupal\DrupalExtension\Context\MessageContext
+            - Drupal\DrupalExtension\Context\DrushContext
+            - Behat\MinkExtension\Context\RawMinkContext
+            - Behat\MinkExtension\Context\RawMinkContext
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url: http://forumone:f1dev@stage.{{ host }}.byf1.io/
+            goutte: ~
+            selenium2:
+              browser: chrome
+              wd_host: {{ user }}:{{ access_key }}@ondemand.saucelabs.com/wd/hub
+              capabilities: { platform:OS X 10.10, version: 47}
+            files_path: 'tests/behat/files/'
+        Drupal\DrupalExtension:
+            blackbox: ~
+            text:
+                log_out: "Log out"
+                log_in: "Log in"
+                password_field: "Password"
+                username_field: "Username"
+            selectors:
+                logged_in_selector: "body.logged-in"
+                login_form_selector: "form#user-login"
+            api_driver: 'drupal'
+            drush:
+#              binary: '/usr/local/bin/drush'
+              alias: '{{ alias }}'
+#              global_options: '--alias-path="."'
+            drupal:
+              drupal_root: '/vagrant/public'
